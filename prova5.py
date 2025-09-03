@@ -1,26 +1,25 @@
-# Questão 5: Programa de login com limite de tentativas
+# Media de notas de alunos
+# pdeir ao usuario a quantidade de alunos, e pra cada aluno, pedir nome e 3 notas
+# implementar uma condicional para saber se foram aprovados considerando a media 7
+# exibir  o nome do aluno a media e se foi aprovado ou reprovado
+# ao final exibir a media da turma inteira
 
-# Definindo as credenciais corretas
-usuario_correto = "admin"
-senha_correta = "1234"
 
-# Inicializando o contador de tentativas
-tentativas = 3
-
-# Loop principal do programa de login
-while tentativas > 0:
-    # Solicitando o nome de usuário e a senha ao usuário
-    usuario = input("Digite o nome de usuário: ")
-    senha = input("Digite a senha: ")
-
-    # Verificando as credenciais
-    if usuario == usuario_correto and senha == senha_correta:
-        print("Bem-vindo ao sistema, admin!")
-        break  # Sai do loop se as credenciais forem corretas
+media_turma = 0
+for i in range(int(input("Digite a quantidade de alunos: "))):
+    nome = input("Nome do aluno: ")
+    nota1 = float(input("Nota 1: "))
+    nota2 = float(input("Nota 2: "))
+    nota3 = float(input("Nota 3: "))
+    
+    media = (nota1 + nota2 + nota3) / 3
+    media_turma += media
+    
+    if media >= 7:
+        status = "Aprovado"
     else:
-        tentativas -= 1
-        if tentativas > 0:
-            print(f"Credenciais incorretas. Você tem {tentativas} tentativas restantes.")
-        else:
-            for _ in range(3):
-                print("Acesso bloqueado")
+        status = "Reprovado"
+    
+    print(f"Aluno: {nome}, Média: {media:.2f}, Status: {status}")
+print(f"Média da turma: {media_turma / (i + 1):.2f}")
+
