@@ -2,7 +2,7 @@
 
 import random
 
-def somar_dados():
+def lancar_dados():
     dado1 = random.randint(1, 6)
     dado2 = random.randint(1, 6)
     soma = dado1 + dado2
@@ -16,7 +16,7 @@ def menu_comandos():
         escolha = input("Digite o número da opção desejada: ")
 
         if escolha == '1':
-            resultado, dado1, dado2 = somar_dados()
+            resultado, dado1, dado2 = lancar_dados()  
             print(f"A soma dos dois dados é: {resultado} .Dados: {dado1} e {dado2}")
         elif escolha == '2':
             break
